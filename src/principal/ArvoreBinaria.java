@@ -27,4 +27,7 @@ public class ArvoreBinaria {
         return atual;
     }
 
+    public boolean estaVazia() {
+        return raiz == null;
+    }
 }
