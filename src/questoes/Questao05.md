@@ -1,4 +1,4 @@
-# 05- Implemente uma classe No com campos valor, esquerda e direita.Implemente uma classe No com campos valor, esquerda e direita.
+# 05- Implemente uma classe No com campos valor, esquerda e direita.
 
 ```java
 public class No {

@@ -1,7 +1,9 @@
+package principal;
+
 public class No {
-    private int valor;
-    private No esquerda;
-    private No direita;
+    int valor;
+    No esquerda;
+    No direita;
 
     public No(int valor) {
         this.valor = valor;
