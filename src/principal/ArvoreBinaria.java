@@ -30,4 +30,14 @@ public class ArvoreBinaria {
     public boolean estaVazia() {
         return raiz == null;
     }
+
+    public int contarNos(){
+        return contarNosRecursivo(raiz);
+    }
+
+    private int contarNosRecursivo(No atual){
+        if(atual == null) return 0;
+
+        return 1 + contarNosRecursivo(atual.esquerda) + contarNosRecursivo(atual.direita);
+    }
 }
