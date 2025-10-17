@@ -40,4 +40,19 @@ public class ArvoreBinaria {
 
         return 1 + contarNosRecursivo(atual.esquerda) + contarNosRecursivo(atual.direita);
     }
+
+    public int retornaAltura(){
+        return retornaAlturaRecursivo(raiz);
+    }
+
+    private int retornaAlturaRecursivo(No atual){
+        if(atual == null) return 0;
+
+
+        int alturaEsquerda = retornaAlturaRecursivo(atual.esquerda);
+        int alturaDireita = retornaAlturaRecursivo(atual.direita);
+
+
+        return 1 + Math.max(alturaDireita, alturaEsquerda);
+    }
 }
