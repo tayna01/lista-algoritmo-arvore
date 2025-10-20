@@ -21,13 +21,13 @@ Este repositório contém a primeira lista de exercícios sobre **árvores biná
 6. Implemente uma classe **ArvoreBinaria** com o método `inserir(int valor)`. ✅
 7. Crie um método que **verifique se a árvore está vazia**. ✅
 8. Crie um método que **retorne a quantidade de nós da árvore**. ✅
-9. Crie um método que **retorne a altura da árvore**.
-10. **Pré-ordem** (raiz → esquerda → direita).
+9. Crie um método que **retorne a altura da árvore**. ✅
+10. **Pré-ordem** (raiz → esquerda → direita). ✅
 
 ---
 
-11. **Em ordem** (esquerda → raiz → direita).
-12. **Pós-ordem** (esquerda → direita → raiz).
+11. **Em ordem** (esquerda → raiz → direita). ✅
+12. **Pós-ordem** (esquerda → direita → raiz). ✅
 13. **Em largura** (nível por nível). 
 14. Dada uma árvore, liste apenas os **nós folhas**.
 15. Implemente a **busca de um elemento** em uma BST.
