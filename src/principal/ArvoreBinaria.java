@@ -55,4 +55,17 @@ public class ArvoreBinaria {
 
         return 1 + Math.max(alturaDireita, alturaEsquerda);
     }
+
+    public void preOrdem(){
+        preOrdemRec(raiz);
+        System.out.println();
+    }
+
+    private void preOrdemRec(No no){
+        if(no != null){
+            System.out.print(no.valor + " ");
+            preOrdemRec(no.esquerda);
+            preOrdemRec(no.direita);
+        }
+    }
 }
