@@ -68,4 +68,30 @@ public class ArvoreBinaria {
             preOrdemRec(no.direita);
         }
     }
+
+    public void emOrdem() {
+        emOrdemRec(raiz);
+        System.out.println();
+    }
+
+    private void emOrdemRec(No no) {
+        if (no != null) {
+            emOrdemRec(no.esquerda);
+            System.out.print(no.valor + " ");
+            emOrdemRec(no.direita);
+        }
+    }
+
+    public void posOrdem() {
+        posOrdemRec(raiz);
+        System.out.println();
+    }
+
+    private void posOrdemRec(No no) {
+        if (no != null) {
+            posOrdemRec(no.esquerda);
+            posOrdemRec(no.direita);
+            System.out.print(no.valor + " ");
+        }
+    }
 }
