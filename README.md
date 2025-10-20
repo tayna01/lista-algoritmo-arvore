@@ -10,17 +10,17 @@ Este repositório contém a primeira lista de exercícios sobre **árvores biná
 
 ## Questões da lista
 
-1. Defina o que é **raiz**, **nó interno** e **folha** em uma árvore binária.
-2. Desenhe uma árvore binária para o vetor `[10, 5, 15, 2, 7]`.
-3. Calcule a **altura** de uma árvore manualmente a partir de um desenho.
-4. Identifique se uma árvore dada (desenho ou código) é uma **árvore de busca binária (BST)**.
-5. Implemente uma classe **No** com campos `valor`, `esquerda` e `direita`.
+1. Defina o que é **raiz**, **nó interno** e **folha** em uma árvore binária. ✅
+2. Desenhe uma árvore binária para o vetor `[10, 5, 15, 2, 7]`. ✅
+3. Calcule a **altura** de uma árvore manualmente a partir de um desenho. ✅
+4. Identifique se uma árvore dada (desenho ou código) é uma **árvore de busca binária (BST)**. ✅
+5. Implemente uma classe **No** com campos `valor`, `esquerda` e `direita`. ✅
 
 ---
 
-6. Implemente uma classe **ArvoreBinaria** com o método `inserir(int valor)`.
-7. Crie um método que **verifique se a árvore está vazia**.
-8. Crie um método que **retorne a quantidade de nós da árvore**.
+6. Implemente uma classe **ArvoreBinaria** com o método `inserir(int valor)`. ✅
+7. Crie um método que **verifique se a árvore está vazia**. ✅
+8. Crie um método que **retorne a quantidade de nós da árvore**. ✅
 9. Crie um método que **retorne a altura da árvore**.
 10. **Pré-ordem** (raiz → esquerda → direita).
 
