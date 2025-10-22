@@ -110,4 +110,20 @@ public class ArvoreBinaria {
         }
         System.out.println();
     }
+
+    public void imprimirNosFolhas(){
+        imprimirNosFolhasRec(raiz);
+    }
+
+    private void imprimirNosFolhasRec(No no) {
+        if (no != null) {
+
+            imprimirNosFolhasRec(no.esquerda);
+            imprimirNosFolhasRec(no.direita);
+
+            if(no.direita == null && no.esquerda == null){
+                System.out.print(no.valor + " ");
+            }
+        }
+    }
 }
