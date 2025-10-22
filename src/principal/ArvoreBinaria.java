@@ -94,4 +94,20 @@ public class ArvoreBinaria {
             System.out.print(no.valor + " ");
         }
     }
+
+    public void emLargura() {
+        if (raiz == null) return;
+
+        LinkedList<Object> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            No atual = (No) fila.remove();
+            System.out.print(atual.valor + " ");
+
+            if (atual.esquerda != null) fila.add(atual.esquerda);
+            if (atual.direita != null) fila.add(atual.direita);
+        }
+        System.out.println();
+    }
 }
