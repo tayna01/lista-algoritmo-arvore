@@ -28,8 +28,8 @@ Este repositório contém a primeira lista de exercícios sobre **árvores biná
 
 11. **Em ordem** (esquerda → raiz → direita). ✅
 12. **Pós-ordem** (esquerda → direita → raiz). ✅
-13. **Em largura** (nível por nível). 
-14. Dada uma árvore, liste apenas os **nós folhas**.
+13. **Em largura** (nível por nível). ✅
+14. Dada uma árvore, liste apenas os **nós folhas**. ✅
 15. Implemente a **busca de um elemento** em uma BST.
 
 ---
