@@ -1,28 +1,25 @@
 package principal;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class ArvoreBinaria {
     private No raiz;
 
-    public ArvoreBinaria(){
+    public ArvoreBinaria() {
         this.raiz = null;
     }
-
-    public void inserirValor(int valor){
-        raiz = inserirValorRecursivo(raiz, valor);
+    public void inserir(int valor) {
+        raiz = inserirRec(raiz, valor);
     }
 
-    private No inserirValorRecursivo(No atual, int valor){
+    private No inserirRec(No atual, int valor) {
+        if (atual == null) return new No(valor);
 
-        if(atual == null){
-            return new No(valor);
-        }
-
-        if(valor < atual.valor){
-            atual.esquerda = inserirValorRecursivo(atual.esquerda, valor);
-        }
-        else{
-            atual.direita = inserirValorRecursivo(atual.direita, valor);
-        }
+        if (valor < atual.valor)
+            atual.esquerda = inserirRec(atual.esquerda, valor);
+        else
+            atual.direita = inserirRec(atual.direita, valor);
 
         return atual;
     }
@@ -31,45 +28,52 @@ public class ArvoreBinaria {
         return raiz == null;
     }
 
-    public int contarNos(){
-        return contarNosRecursivo(raiz);
+    public int contarNos() {
+        return contarNosRec(raiz);
     }
 
-    private int contarNosRecursivo(No atual){
-        if(atual == null) return 0;
-
-        return 1 + contarNosRecursivo(atual.esquerda) + contarNosRecursivo(atual.direita);
+    private int contarNosRec(No atual) {
+        if (atual == null) return 0;
+        return 1 + contarNosRec(atual.esquerda) + contarNosRec(atual.direita);
     }
 
-    public int retornaAltura(){
-        return retornaAlturaRecursivo(raiz);
+    public int altura() {
+        return alturaRec(raiz);
     }
 
-    private int retornaAlturaRecursivo(No atual){
-        if(atual == null) return 0;
-
-
-        int alturaEsquerda = retornaAlturaRecursivo(atual.esquerda);
-        int alturaDireita = retornaAlturaRecursivo(atual.direita);
-
-
-        return 1 + Math.max(alturaDireita, alturaEsquerda);
+    private int alturaRec(No atual) {
+        if (atual == null) return 0;
+        int alturaEsq = alturaRec(atual.esquerda);
+        int alturaDir = alturaRec(atual.direita);
+        return 1 + Math.max(alturaEsq, alturaDir);
     }
 
-    public void preOrdem(){
+    public void imprimirEstrutura() {
+        imprimirEstruturaRec(raiz, 0);
+    }
+
+    private void imprimirEstruturaRec(No no, int nivel) {
+        if (no != null) {
+            imprimirEstruturaRec(no.direita, nivel + 1);
+            System.out.println("    ".repeat(nivel) + no.valor);
+            imprimirEstruturaRec(no.esquerda, nivel + 1);
+        }
+    }
+
+    public void percorrerPreOrdem() {
         preOrdemRec(raiz);
         System.out.println();
     }
 
-    private void preOrdemRec(No no){
-        if(no != null){
+    private void preOrdemRec(No no) {
+        if (no != null) {
             System.out.print(no.valor + " ");
             preOrdemRec(no.esquerda);
             preOrdemRec(no.direita);
         }
     }
 
-    public void emOrdem() {
+    public void percorrerEmOrdem() {
         emOrdemRec(raiz);
         System.out.println();
     }
@@ -82,7 +86,7 @@ public class ArvoreBinaria {
         }
     }
 
-    public void posOrdem() {
+    public void percorrerPosOrdem() {
         posOrdemRec(raiz);
         System.out.println();
     }
@@ -95,14 +99,14 @@ public class ArvoreBinaria {
         }
     }
 
-    public void emLargura() {
+    public void percorrerEmLargura() {
         if (raiz == null) return;
 
-        LinkedList<Object> fila = new LinkedList<>();
+        Queue<No> fila = new LinkedList<>();
         fila.add(raiz);
 
         while (!fila.isEmpty()) {
-            No atual = (No) fila.remove();
+            No atual = fila.remove();
             System.out.print(atual.valor + " ");
 
             if (atual.esquerda != null) fila.add(atual.esquerda);
@@ -110,20 +114,21 @@ public class ArvoreBinaria {
         }
         System.out.println();
     }
-
-    public void imprimirNosFolhas(){
-        imprimirNosFolhasRec(raiz);
+    
+    public void imprimirFolhas() {
+        imprimirFolhasRec(raiz);
+        System.out.println();
     }
 
-    private void imprimirNosFolhasRec(No no) {
-        if (no != null) {
+    private void imprimirFolhasRec(No no) {
+        if (no == null) return;
 
-            imprimirNosFolhasRec(no.esquerda);
-            imprimirNosFolhasRec(no.direita);
-
-            if(no.direita == null && no.esquerda == null){
-                System.out.print(no.valor + " ");
-            }
+        if (no.esquerda == null && no.direita == null) {
+            System.out.print(no.valor + " ");
+            return;
         }
+
+        imprimirFolhasRec(no.esquerda);
+        imprimirFolhasRec(no.direita);
     }
 }
