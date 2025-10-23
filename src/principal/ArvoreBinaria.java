@@ -114,7 +114,7 @@ public class ArvoreBinaria {
         }
         System.out.println();
     }
-    
+
     public void imprimirFolhas() {
         imprimirFolhasRec(raiz);
         System.out.println();
@@ -130,5 +130,21 @@ public class ArvoreBinaria {
 
         imprimirFolhasRec(no.esquerda);
         imprimirFolhasRec(no.direita);
+    }
+
+    public boolean buscarElemento(int valor) {
+        return buscarElementoRec(raiz, valor);
+    }
+
+    private boolean buscarElementoRec(No atual, int valor) {
+        if (atual == null) return false;
+
+        if (atual.valor == valor) return true;
+
+        if (valor < atual.valor) {
+            return buscarElementoRec(atual.esquerda, valor);
+        } else {
+            return buscarElementoRec(atual.direita, valor);
+        }
     }
 }
