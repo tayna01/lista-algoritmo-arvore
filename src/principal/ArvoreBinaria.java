@@ -9,25 +9,29 @@ public class ArvoreBinaria {
     public ArvoreBinaria() {
         this.raiz = null;
     }
+
+    //Questão 06
     public void inserir(int valor) {
-        raiz = inserirRec(raiz, valor);
+        raiz = inserir(raiz, valor);
     }
 
-    private No inserirRec(No atual, int valor) {
+    private No inserir(No atual, int valor) {
         if (atual == null) return new No(valor);
 
         if (valor < atual.valor)
-            atual.esquerda = inserirRec(atual.esquerda, valor);
+            atual.esquerda = inserir(atual.esquerda, valor);
         else
-            atual.direita = inserirRec(atual.direita, valor);
+            atual.direita = inserir(atual.direita, valor);
 
         return atual;
     }
 
+    //Questão 07
     public boolean estaVazia() {
         return raiz == null;
     }
 
+    //Questão 08
     public int contarNos() {
         return contarNosRec(raiz);
     }
@@ -37,6 +41,7 @@ public class ArvoreBinaria {
         return 1 + contarNosRec(atual.esquerda) + contarNosRec(atual.direita);
     }
 
+    //Questão 09
     public int altura() {
         return alturaRec(raiz);
     }
@@ -60,6 +65,7 @@ public class ArvoreBinaria {
         }
     }
 
+    //Questão 10
     public void percorrerPreOrdem() {
         preOrdemRec(raiz);
         System.out.println();
@@ -73,6 +79,7 @@ public class ArvoreBinaria {
         }
     }
 
+    //Questão 11
     public void percorrerEmOrdem() {
         emOrdemRec(raiz);
         System.out.println();
@@ -86,6 +93,7 @@ public class ArvoreBinaria {
         }
     }
 
+    //Questão 12
     public void percorrerPosOrdem() {
         posOrdemRec(raiz);
         System.out.println();
@@ -99,6 +107,7 @@ public class ArvoreBinaria {
         }
     }
 
+    //Questão 13
     public void percorrerEmLargura() {
         if (raiz == null) return;
 
@@ -115,6 +124,7 @@ public class ArvoreBinaria {
         System.out.println();
     }
 
+    //Questão 14
     public void imprimirFolhas() {
         imprimirFolhasRec(raiz);
         System.out.println();
@@ -132,6 +142,7 @@ public class ArvoreBinaria {
         imprimirFolhasRec(no.direita);
     }
 
+    //Questão 15
     public boolean buscarElemento(int valor) {
         return buscarElementoRec(raiz, valor);
     }
